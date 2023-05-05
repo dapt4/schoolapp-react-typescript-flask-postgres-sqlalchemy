@@ -1,0 +1,13 @@
+# get all classes
+GET http://localhost:5000/class
+
+# get one class
+GET http://localhost:5000/class/1
+
+# create a class
+Content-Type: application/json
+POST http://localhost:5000/class << raw
+{
+    "name": "maths"
+}
+raw

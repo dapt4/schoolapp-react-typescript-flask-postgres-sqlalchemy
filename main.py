@@ -9,6 +9,7 @@ app = Flask(__name__)
 
 # create_db_tables()
 
+
 @app.route('/class', methods=['GET'])
 def get_classes():
     try:
@@ -20,6 +21,7 @@ def get_classes():
     except Exception as e:
         return {'error': str(e)}
 
+
 @app.get('/class/<int:class_id>')
 def get_a_class(class_id):
     try:
@@ -29,6 +31,7 @@ def get_a_class(class_id):
             return school_class.to_dict()
     except Exception as e:
         return {'error': str(e)}
+
 
 @app.post('/class')
 def create_class():
@@ -40,7 +43,8 @@ def create_class():
             return school_class.to_dict()
     except Exception as e:
         return {'error': str(e)}
-    
+
+
 @app.delete('/class/<int:class_id>')
 def delete_class(class_id):
     try:
@@ -50,4 +54,3 @@ def delete_class(class_id):
             session.commit()
     except Exceptionerr as err:
         return {'error': str(err)}
-
